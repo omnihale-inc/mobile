@@ -1,0 +1,5 @@
+# config files
+*.config.*
+
+# eslint and prettier files
+.*.js
