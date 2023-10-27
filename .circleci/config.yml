@@ -10,21 +10,23 @@ aliases:
     - image: cimg/node:16.10
 
 orbs:
-  # The Node.js orb contains a set of prepackaged CircleCI configuration you can utilize
   # Orbs reduce the amount of configuration required for common tasks.
   # See the orb documentation here: https://circleci.com/developer/orbs/orb/circleci/node
   node: circleci/node@4.7
+  codecov: codecov/codecov@3.2.4
+  slack: circleci/slack@4.9.3
 
 jobs:
   # Below is the definition of the jobs
   lint:
     docker: *docker
-      steps:
-        - checkout
-            pkg-manager: npm
-        - run:
-            name: Run lint
-            command: npm run lint
+    steps:
+      - checkout
+      - node/install-packages:
+          pkg-manager: npm
+      - run:
+          name: Run lint
+          command: npm run lint
   test:
     docker: *docker
     steps:
@@ -33,7 +35,8 @@ jobs:
           pkg-manager: npm
       - run:
           name: Run tests
-          command: npm run test
+          # Stop test watch mode for ci
+          command: npm run test -- --watchAll=false
   coverage:
     docker: *docker
     steps:
@@ -43,12 +46,22 @@ jobs:
       - run:
           name: Run Code Coverage
           command: npm run coverage
+      - persist_to_workspace:
+          root: .
+          paths: ./coverage
   upload_artifact:
     docker: *docker
     steps:
       - checkout
-      - run:
-        command: ls
+      - attach_workspace:
+          at: .
+      - codecov/upload
+  notify:
+    docker: *docker
+    steps:
+      - slack/notify:
+          event: fail
+          template: basic_fail_1
 
 workflows:
   # Below is the definition of your workflow.
@@ -59,8 +72,11 @@ workflows:
     jobs:
       - lint
       - test
-      - coverage
+      - coverage:
+          requires:
+            - test
       - upload_artifact:
-        requires: 
-          - coverage
-
+          requires:
+            - coverage
+      - notify:
+          context: slack-secrets
