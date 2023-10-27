@@ -1,4 +1,4 @@
-### Omnihale Repo
+### Omnihale Mobile App Repo
 
 ## Commands
 
