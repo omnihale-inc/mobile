@@ -8,3 +8,8 @@ it(`renders correctly`, () => {
 
   expect(tree).toMatchSnapshot();
 });
+
+it("fail", () => {
+  const value = 32;
+  expect(value).toBe(30);
+});

@@ -27,6 +27,9 @@ jobs:
       - run:
           name: Run lint
           command: npm run lint
+      - slack/notify:
+          event: fail
+          template: basic_fail_1
   test:
     docker: *docker
     steps:
@@ -37,6 +40,9 @@ jobs:
           name: Run tests
           # Stop test watch mode for ci
           command: npm run test -- --watchAll=false
+      - slack/notify:
+          event: fail
+          template: basic_fail_1
   coverage:
     docker: *docker
     steps:
@@ -56,12 +62,6 @@ jobs:
       - attach_workspace:
           at: .
       - codecov/upload
-  notify:
-    docker: *docker
-    steps:
-      - slack/notify:
-          event: fail
-          template: basic_fail_1
 
 workflows:
   # Below is the definition of your workflow.
@@ -70,13 +70,13 @@ workflows:
   # For more details on extending your workflow, see the configuration docs: https://circleci.com/docs/configuration-reference/#workflows
   CI:
     jobs:
-      - lint
-      - test
+      - lint:
+          context: slack-secrets
+      - test:
+          context: slack-secrets
       - coverage:
           requires:
             - test
       - upload_artifact:
           requires:
             - coverage
-      - notify:
-          context: slack-secrets
