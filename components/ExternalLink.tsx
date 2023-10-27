@@ -13,7 +13,7 @@ export function ExternalLink(
         target: "_blank"
       }}
       {...props}
-      href={props.href}
+      href={props.href as `http${string}`}
       onPress={(e) => {
         if (Platform.OS !== "web") {
           // Prevent the default behavior of linking to the default browser on native.
