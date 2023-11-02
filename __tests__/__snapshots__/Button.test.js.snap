@@ -1,0 +1,83 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render green button 1`] = `
+<View
+  accessibilityState={
+    {
+      "busy": undefined,
+      "checked": undefined,
+      "disabled": undefined,
+      "expanded": undefined,
+      "selected": undefined,
+    }
+  }
+  accessibilityValue={
+    {
+      "max": undefined,
+      "min": undefined,
+      "now": undefined,
+      "text": undefined,
+    }
+  }
+  accessible={true}
+  collapsable={false}
+  focusable={true}
+  onBlur={[Function]}
+  onClick={[Function]}
+  onFocus={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+>
+  <Text
+    style={
+      [
+        {
+          "color": "#000",
+        },
+        {
+          "backgroundColor": "#237e5d",
+          "borderRadius": 30,
+          "color": "#ffffff",
+          "fontFamily": "SatoshiMedium",
+          "fontSize": 14,
+          "marginBottom": 40,
+          "marginHorizontal": 24,
+          "paddingVertical": 22,
+          "textAlign": "center",
+        },
+      ]
+    }
+  >
+    green button
+  </Text>
+</View>
+`;
+
+exports[`render grey button 1`] = `
+<Text
+  style={
+    [
+      {
+        "color": "#000",
+      },
+      {
+        "backgroundColor": "#d1d3d9",
+        "borderRadius": 30,
+        "color": "#000000",
+        "fontFamily": "SatoshiMedium",
+        "fontSize": 14,
+        "marginBottom": 40,
+        "marginHorizontal": 24,
+        "paddingVertical": 22,
+        "textAlign": "center",
+      },
+    ]
+  }
+>
+  grey button
+</Text>
+`;

@@ -1,0 +1,66 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render icon image 1`] = `
+<View
+  accessibilityState={
+    {
+      "busy": undefined,
+      "checked": undefined,
+      "disabled": undefined,
+      "expanded": undefined,
+      "selected": undefined,
+    }
+  }
+  accessibilityValue={
+    {
+      "max": undefined,
+      "min": undefined,
+      "now": undefined,
+      "text": undefined,
+    }
+  }
+  accessible={true}
+  collapsable={false}
+  focusable={true}
+  onBlur={[Function]}
+  onClick={[Function]}
+  onFocus={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+>
+  <ViewManagerAdapter_ExpoImage
+    contentFit="cover"
+    contentPosition={
+      {
+        "left": "50%",
+        "top": "50%",
+      }
+    }
+    height={22}
+    onError={[Function]}
+    onLoad={[Function]}
+    onLoadStart={[Function]}
+    onProgress={[Function]}
+    placeholder={[]}
+    source={
+      [
+        {
+          "uri": "path/to/imagee",
+        },
+      ]
+    }
+    style={
+      {
+        "height": 22,
+        "width": 22,
+      }
+    }
+    transition={null}
+    width={22}
+  />
+</View>
+`;
