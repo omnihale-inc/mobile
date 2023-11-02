@@ -24,7 +24,9 @@ SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
   const [loaded, error] = useFonts({
-    SpaceMono: require("../assets/fonts/SpaceMono-Regular.ttf"),
+    SatoshiRegular: require("../assets/fonts/Satoshi_Complete/Fonts/OTF/Satoshi-Regular.otf"),
+    SatoshiMedium: require("../assets/fonts/Satoshi_Complete/Fonts/OTF/Satoshi-Medium.otf"),
+    SatoshiBold: require("../assets/fonts/Satoshi_Complete/Fonts/OTF/Satoshi-Bold.otf"),
     ...FontAwesome.font
   });
 
@@ -54,6 +56,7 @@ function RootLayoutNav() {
       <Stack>
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
         <Stack.Screen name="modal" options={{ presentation: "modal" }} />
+        <Stack.Screen name="create" options={{ headerShown: false }} />
       </Stack>
     </ThemeProvider>
   );
