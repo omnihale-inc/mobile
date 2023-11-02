@@ -20,6 +20,10 @@ Linting;
     npm run lint
 ```
 
+```bash
+    npm run lint:fix
+```
+
 Code Coverage;
 
 ```bash
