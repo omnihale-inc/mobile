@@ -1,0 +1,107 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render input with icon 1`] = `
+<View
+  style={
+    [
+      {
+        "backgroundColor": "#fff",
+      },
+      {
+        "position": "relative",
+      },
+    ]
+  }
+>
+  <TextInput
+    keyboardType="email-address"
+    onChangeText={[MockFunction]}
+    placeholder="Enter Email address"
+    style={
+      {
+        "borderColor": "#d1d3d9",
+        "borderRadius": 30,
+        "borderWidth": 1,
+        "fontFamily": "SatoshiRegular",
+        "fontSize": 17,
+        "marginVertical": 24,
+        "paddingLeft": 55,
+        "paddingRight": 40,
+        "paddingVertical": 15,
+      }
+    }
+    value="fake value"
+  />
+  <View
+    style={
+      [
+        {
+          "backgroundColor": "#fff",
+        },
+        {
+          "left": 22,
+          "position": "absolute",
+          "top": 43,
+        },
+      ]
+    }
+  >
+    <View
+      accessibilityState={
+        {
+          "busy": undefined,
+          "checked": undefined,
+          "disabled": undefined,
+          "expanded": undefined,
+          "selected": undefined,
+        }
+      }
+      accessibilityValue={
+        {
+          "max": undefined,
+          "min": undefined,
+          "now": undefined,
+          "text": undefined,
+        }
+      }
+      accessible={true}
+      collapsable={false}
+      focusable={true}
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+    >
+      <ViewManagerAdapter_ExpoImage
+        contentFit="cover"
+        contentPosition={
+          {
+            "left": "50%",
+            "top": "50%",
+          }
+        }
+        height={22}
+        onError={[Function]}
+        onLoad={[Function]}
+        onLoadStart={[Function]}
+        onProgress={[Function]}
+        placeholder={[]}
+        source={[]}
+        style={
+          {
+            "height": 22,
+            "width": 22,
+          }
+        }
+        transition={null}
+        width={22}
+      />
+    </View>
+  </View>
+</View>
+`;

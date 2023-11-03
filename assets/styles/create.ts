@@ -19,21 +19,6 @@ export const enterEmail: EnterEmail = (viewPortHeight: number) => ({
     marginTop: 10,
     fontSize: 14
   },
-  emailInputWrapper: {
-    position: "relative"
-  },
-  emailInput: {
-    borderColor: "#d1d3d9",
-    fontFamily: "SatoshiRegular",
-    borderWidth: 1,
-    marginVertical: 24,
-    paddingVertical: 15,
-    paddingLeft: 55,
-    paddingRight: 40,
-    borderRadius: 30,
-    fontSize: 17
-  },
-  emailIcon: { position: "absolute", top: 43, left: 22 },
   logIn: {
     flex: 0,
     justifyContent: "space-between",

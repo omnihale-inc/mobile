@@ -21,25 +21,6 @@ export type EnterEmail = (viewPortHeight: number) => {
     marginTop: number;
     fontSize: number;
   };
-  emailInputWrapper: {
-    position: "relative"; // Update value to reflect new styles
-  };
-  emailInput: {
-    borderColor: string;
-    fontFamily: string;
-    borderWidth: number;
-    marginVertical: number;
-    paddingVertical: number;
-    paddingLeft: number;
-    paddingRight: number;
-    borderRadius: number;
-    fontSize: number;
-  };
-  emailIcon: {
-    position: "absolute"; // Update value to reflect new styles
-    top: number;
-    left: number;
-  };
   logIn: {
     flex: 0;
     justifyContent: "space-between"; // Update value to reflect new styles
