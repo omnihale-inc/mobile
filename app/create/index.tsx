@@ -2,11 +2,12 @@ import { router } from "expo-router";
 import { useEffect, useState } from "react";
 import { StyleSheet, SafeAreaView, Dimensions } from "react-native";
 
-import { enterEmail } from "../../assets/styles/create";
 import { GreenButton, GreyButton } from "../../components/Button";
 import InputWithIcon from "../../components/InputWithIcon";
-import { Text, View } from "../../components/Themed";
+import { BoldText, MediumText, RegularText } from "../../components/Texts";
+import { View } from "../../components/Themed";
 import MailIcon from "../../components/icons/MailIcon";
+import { globalStyle } from "../../styles/globalStyle";
 import enterEmailInputValidator from "../../utils/create/enterEmailInputValidator";
 
 export default function EnterEmail() {
@@ -21,18 +22,22 @@ export default function EnterEmail() {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.email}>
-        <Text style={styles.enterText}>Enter your email Address</Text>
-        <Text style={styles.otp}>
+        <BoldText style={styles.bigText}>Enter your email Address</BoldText>
+        <RegularText style={{ ...styles.otp, ...styles.smallText }}>
           A 4-code OTP will be sent to your email to verify your account.
-        </Text>
+        </RegularText>
         <InputWithIcon
           icon={() => <MailIcon />}
           onChangeText={(value) => setEmailInput(value)}
           value={emailInput}
         />
         <View style={styles.logIn}>
-          <Text style={styles.logInElOne}>Have an account with us?</Text>
-          <Text style={styles.logInElTwo}>Log in</Text>
+          <RegularText style={styles.smallText}>
+            Have an account with us?
+          </RegularText>
+          <MediumText style={{ ...styles.greenText, ...styles.mediumText }}>
+            Log in
+          </MediumText>
         </View>
       </View>
       <View>
@@ -54,4 +59,4 @@ export default function EnterEmail() {
 
 const viewPortHeight = Dimensions.get("window").height;
 
-const styles = StyleSheet.create(enterEmail(viewPortHeight));
+const styles = StyleSheet.create(globalStyle(viewPortHeight));

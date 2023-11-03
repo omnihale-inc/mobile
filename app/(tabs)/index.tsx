@@ -13,7 +13,7 @@ export default function TabOneScreen() {
         lightColor="#eee"
         darkColor="rgba(255,255,255,0.1)"
       />
-      <Link href="/create/verify">go to verify</Link>
+      <Link href="/create/">go to verify</Link>
       <EditScreenInfo path="app/create/index.tsx" />
     </View>
   );

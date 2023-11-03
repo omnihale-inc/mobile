@@ -2,7 +2,7 @@
  * Enter Email styles for the create path in the app
  * directory
  */
-export type EnterEmail = (viewPortHeight: number) => {
+export type GlobalStyle = (viewPortHeight?: number) => {
   container: {
     justifyContent: "space-between"; // Update value to reflect new styles
     backgroundColor: string;
@@ -12,25 +12,24 @@ export type EnterEmail = (viewPortHeight: number) => {
   email: {
     marginHorizontal: number;
   };
-  enterText: {
-    fontFamily: string;
+  bigText: {
+    fontSize: number;
+  };
+  mediumText: {
+    fontSize: number;
+  };
+  smallText: {
     fontSize: number;
   };
   otp: {
-    fontFamily: string;
     marginTop: number;
-    fontSize: number;
   };
   logIn: {
     flex: 0;
     justifyContent: "space-between"; // Update value to reflect new styles
     flexDirection: "row"; // Update value to reflect new styles
   };
-  logInElOne: {
-    fontFamily: string;
-  };
-  logInElTwo: {
+  greenText: {
     color: string;
-    fontFamily: string;
   };
 };

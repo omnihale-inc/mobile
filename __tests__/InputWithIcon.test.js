@@ -1,13 +1,13 @@
 import renderer from "react-test-renderer";
 
 import InputWithIcon from "../components/InputWithIcon";
-import MailIcon from "../components/icons/MailIcon";
 
 it("render input with icon", () => {
+  const FakeComponent = jest.fn();
   const tree = renderer
     .create(
       <InputWithIcon
-        icon={() => <MailIcon />}
+        icon={() => FakeComponent}
         onChangeText={jest.fn()}
         value="fake value"
       />

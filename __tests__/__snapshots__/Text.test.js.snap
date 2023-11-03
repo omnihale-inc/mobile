@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render bold satoshi text 1`] = `
+<Text
+  style={
+    [
+      {
+        "color": "#000",
+      },
+      {
+        "fontFamily": "SatoshiBold",
+        "fontSize": 20,
+      },
+    ]
+  }
+>
+  Bold Text
+</Text>
+`;
+
+exports[`render medium satoshi text 1`] = `
+<Text
+  style={
+    [
+      {
+        "color": "#000",
+      },
+      {
+        "fontFamily": "SatoshiMedium",
+        "fontSize": 20,
+      },
+    ]
+  }
+>
+  Medium Text
+</Text>
+`;
+
+exports[`render regular satoshi text 1`] = `
+<Text
+  style={
+    [
+      {
+        "color": "#000",
+      },
+      {
+        "fontFamily": "SatoshiRegular",
+        "fontSize": 20,
+      },
+    ]
+  }
+>
+  Regular Text
+</Text>
+`;
