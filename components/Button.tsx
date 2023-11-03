@@ -2,6 +2,7 @@ import { ReactNode } from "react";
 import { StyleSheet, Pressable } from "react-native";
 
 import { Text } from "./Themed";
+import { globalStyle } from "../styles/globalStyle";
 
 export const GreenButton = ({
   children,
@@ -12,7 +13,9 @@ export const GreenButton = ({
 }) => {
   return (
     <Pressable onPress={onPress}>
-      <Text style={styles.GreenButton}>{children}</Text>
+      <Text style={{ ...styles.GreenButton, ...globalStyle().mediumText }}>
+        {children}
+      </Text>
     </Pressable>
   );
 };
@@ -22,7 +25,11 @@ export const GreyButton = ({
 }: {
   children: ReactNode | ReactNode[];
 }) => {
-  return <Text style={styles.GreyButton}>{children}</Text>;
+  return (
+    <Text style={{ ...styles.GreyButton, ...globalStyle().mediumText }}>
+      {children}
+    </Text>
+  );
 };
 
 const styles = StyleSheet.create({

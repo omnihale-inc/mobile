@@ -1,28 +1,33 @@
-import { Create } from "../../types/create";
+import { GlobalStyle } from "../types/globalStyle";
 
-export const create: Create = (viewPortHeight: number) => ({
+export const globalStyle: GlobalStyle = (viewPortHeight) => ({
   container: {
     justifyContent: "space-between",
     backgroundColor: "#fff",
     flex: 1,
-    paddingTop: (viewPortHeight * 5) / 100
+    paddingTop: (viewPortHeight! * 5) / 100 || 0
   },
   email: {
     marginHorizontal: 24
   },
-  enterText: {
+  bigText: {
     fontSize: 20
   },
-  otp: {
-    marginTop: 10,
+  mediumText: {
+    fontSize: 16
+  },
+  smallText: {
     fontSize: 14
+  },
+  otp: {
+    marginTop: 10
   },
   logIn: {
     flex: 0,
     justifyContent: "space-between",
     flexDirection: "row"
   },
-  logInElTwo: {
+  greenText: {
     color: "#237e5d"
   }
 });

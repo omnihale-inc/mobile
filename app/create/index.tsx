@@ -2,12 +2,12 @@ import { router } from "expo-router";
 import { useEffect, useState } from "react";
 import { StyleSheet, SafeAreaView, Dimensions } from "react-native";
 
-import { create } from "../../assets/styles/create";
 import { GreenButton, GreyButton } from "../../components/Button";
 import InputWithIcon from "../../components/InputWithIcon";
 import { BoldText, MediumText, RegularText } from "../../components/Texts";
 import { View } from "../../components/Themed";
 import MailIcon from "../../components/icons/MailIcon";
+import { globalStyle } from "../../styles/globalStyle";
 import enterEmailInputValidator from "../../utils/create/enterEmailInputValidator";
 
 export default function EnterEmail() {
@@ -22,8 +22,8 @@ export default function EnterEmail() {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.email}>
-        <BoldText style={styles.enterText}>Enter your email Address</BoldText>
-        <RegularText style={styles.otp}>
+        <BoldText style={styles.bigText}>Enter your email Address</BoldText>
+        <RegularText style={{ ...styles.otp, ...styles.smallText }}>
           A 4-code OTP will be sent to your email to verify your account.
         </RegularText>
         <InputWithIcon
@@ -32,8 +32,12 @@ export default function EnterEmail() {
           value={emailInput}
         />
         <View style={styles.logIn}>
-          <RegularText>Have an account with us?</RegularText>
-          <MediumText style={styles.logInElTwo}>Log in</MediumText>
+          <RegularText style={styles.smallText}>
+            Have an account with us?
+          </RegularText>
+          <MediumText style={{ ...styles.greenText, ...styles.mediumText }}>
+            Log in
+          </MediumText>
         </View>
       </View>
       <View>
@@ -55,4 +59,4 @@ export default function EnterEmail() {
 
 const viewPortHeight = Dimensions.get("window").height;
 
-const styles = StyleSheet.create(create(viewPortHeight));
+const styles = StyleSheet.create(globalStyle(viewPortHeight));
