@@ -1,6 +1,6 @@
-import { EnterEmail } from "../../types/create";
+import { Create } from "../../types/create";
 
-export const enterEmail: EnterEmail = (viewPortHeight: number) => ({
+export const create: Create = (viewPortHeight: number) => ({
   container: {
     justifyContent: "space-between",
     backgroundColor: "#fff",
@@ -11,11 +11,9 @@ export const enterEmail: EnterEmail = (viewPortHeight: number) => ({
     marginHorizontal: 24
   },
   enterText: {
-    fontFamily: "SatoshiBold",
     fontSize: 20
   },
   otp: {
-    fontFamily: "SatoshiRegular",
     marginTop: 10,
     fontSize: 14
   },
@@ -24,11 +22,7 @@ export const enterEmail: EnterEmail = (viewPortHeight: number) => ({
     justifyContent: "space-between",
     flexDirection: "row"
   },
-  logInElOne: {
-    fontFamily: "SatoshiRegular"
-  },
   logInElTwo: {
-    color: "#237e5d",
-    fontFamily: "SatoshiMedium"
+    color: "#237e5d"
   }
 });

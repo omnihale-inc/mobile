@@ -14,10 +14,6 @@ export default function CreateLayout() {
         name="index"
         options={{ headerLeft: () => <BackIcon screen="index" /> }}
       />
-      <Stack.Screen
-        name="verify"
-        options={{ headerLeft: () => <BackIcon screen="verify" /> }}
-      />
     </Stack>
   );
 }
