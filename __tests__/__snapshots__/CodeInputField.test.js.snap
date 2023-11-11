@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render code input field 1`] = `
+<TextInput
+  keyboardType="numeric"
+  onBlur={[MockFunction]}
+  onChangeText={[MockFunction]}
+  onFocus={[MockFunction]}
+  onKeyPress={[Function]}
+  style={{}}
+  value="0"
+/>
+`;

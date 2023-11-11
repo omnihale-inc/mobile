@@ -8,9 +8,7 @@ export type GlobalStyle = (viewPortHeight?: number) => {
     backgroundColor: string;
     flex: number;
     paddingTop: number;
-  };
-  email: {
-    marginHorizontal: number;
+    paddingHorizontal: number;
   };
   bigText: {
     fontSize: number;
@@ -21,7 +19,10 @@ export type GlobalStyle = (viewPortHeight?: number) => {
   smallText: {
     fontSize: number;
   };
-  otp: {
+  smallSpacingTop: {
+    marginTop: number;
+  };
+  bigSpacingTop: {
     marginTop: number;
   };
   logIn: {

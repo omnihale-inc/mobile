@@ -7,7 +7,7 @@ it("render input with icon", () => {
   const tree = renderer
     .create(
       <InputWithIcon
-        icon={() => FakeComponent}
+        icon={() => <FakeComponent />}
         onChangeText={jest.fn()}
         value="fake value"
       />

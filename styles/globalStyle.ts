@@ -5,10 +5,8 @@ export const globalStyle: GlobalStyle = (viewPortHeight) => ({
     justifyContent: "space-between",
     backgroundColor: "#fff",
     flex: 1,
-    paddingTop: (viewPortHeight! * 5) / 100 || 0
-  },
-  email: {
-    marginHorizontal: 24
+    paddingTop: viewPortHeight! * (1 / 100) || 0,
+    paddingHorizontal: 24
   },
   bigText: {
     fontSize: 20
@@ -19,8 +17,11 @@ export const globalStyle: GlobalStyle = (viewPortHeight) => ({
   smallText: {
     fontSize: 14
   },
-  otp: {
-    marginTop: 10
+  smallSpacingTop: {
+    marginTop: 16
+  },
+  bigSpacingTop: {
+    marginTop: 25
   },
   logIn: {
     flex: 0,
