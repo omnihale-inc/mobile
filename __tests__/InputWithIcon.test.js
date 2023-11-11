@@ -10,6 +10,8 @@ it("render input with icon", () => {
         icon={() => <FakeComponent />}
         onChangeText={jest.fn()}
         value="fake value"
+        secureText={false}
+        placeholder="fake value"
       />
     )
     .toJSON();

@@ -14,9 +14,10 @@ exports[`render input with icon 1`] = `
   }
 >
   <TextInput
-    keyboardType="email-address"
+    keyboardType="default"
     onChangeText={[MockFunction]}
-    placeholder="Enter Email address"
+    placeholder="fake value"
+    secureTextEntry={false}
     style={
       {
         "borderColor": "#d1d3d9",

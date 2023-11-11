@@ -1,6 +1,6 @@
 import { router } from "expo-router";
 import { useEffect, useState, useContext } from "react";
-import { StyleSheet, SafeAreaView, Dimensions } from "react-native";
+import { StyleSheet, SafeAreaView, Dimensions, Pressable } from "react-native";
 
 import { GreenButton, GreyButton } from "../../components/Button";
 import InputWithIcon from "../../components/InputWithIcon";
@@ -34,6 +34,7 @@ export default function EnterEmail() {
         </RegularText>
         <InputWithIcon
           icon={() => <MailIcon />}
+          placeholder="Enter Email address"
           onChangeText={(value) => setEmailInput(value)}
           value={emailInput}
         />
@@ -41,9 +42,16 @@ export default function EnterEmail() {
           <RegularText style={styles.smallText}>
             Have an account with us?
           </RegularText>
-          <MediumText style={{ ...styles.greenText, ...styles.mediumText }}>
-            Log in
-          </MediumText>
+
+          <Pressable
+            onPress={() => {
+              router.push("/login/");
+            }}
+          >
+            <MediumText style={{ ...styles.greenText, ...styles.mediumText }}>
+              Log in
+            </MediumText>
+          </Pressable>
         </View>
       </View>
       <View>
