@@ -9,7 +9,6 @@ const PasswordInputWithIcon = ({
   value,
   onChangeText,
   icon,
-  secureText,
   placeholder
 }: {
   value?: string;
@@ -27,7 +26,7 @@ const PasswordInputWithIcon = ({
           style={styles.emailInput}
           placeholder={placeholder}
           keyboardType="default"
-          secureTextEntry={secureText}
+          secureTextEntry={!passwdIsDisplayed}
           value={value}
           onChangeText={onChangeText}
         />
