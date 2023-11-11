@@ -34,7 +34,6 @@ export default function EnterEmail() {
         </RegularText>
         <InputWithIcon
           icon={() => <MailIcon />}
-          placeholder="Enter Email address"
           onChangeText={(value) => setEmailInput(value)}
           value={emailInput}
         />

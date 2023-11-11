@@ -20,9 +20,8 @@ const InputWithIcon = ({
     <View style={styles.emailInputWrapper}>
       <TextInput
         style={styles.emailInput}
-        placeholder={placeholder}
-        keyboardType="default"
-        secureTextEntry={secureText}
+        placeholder="Enter email address"
+        keyboardType="email-address"
         value={value}
         onChangeText={onChangeText}
       />

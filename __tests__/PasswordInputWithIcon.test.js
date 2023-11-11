@@ -1,15 +1,17 @@
 import renderer from "react-test-renderer";
 
-import InputWithIcon from "../components/InputWithIcon";
+import PasswordInputWithIcon from "../components/PasswordInputWithIcon";
 
-it("render input with icon", () => {
+it("render password input with icon", () => {
   const FakeComponent = jest.fn();
   const tree = renderer
     .create(
-      <InputWithIcon
+      <PasswordInputWithIcon
         icon={() => <FakeComponent />}
         onChangeText={jest.fn()}
         value="fake value"
+        secureText={false}
+        placeholder="fake value"
       />
     )
     .toJSON();
