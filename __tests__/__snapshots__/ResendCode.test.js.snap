@@ -1,6 +1,28 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`render green button 1`] = `
+exports[`render with counter 1`] = `
+<View
+  style={{}}
+>
+  <Text
+    style={
+      [
+        {
+          "color": "#000",
+        },
+        {
+          "fontFamily": "SatoshiRegular",
+        },
+      ]
+    }
+  >
+    Resend code in
+  </Text>
+  00:34
+</View>
+`;
+
+exports[`render without counter 1`] = `
 <View
   accessibilityState={
     {
@@ -39,43 +61,13 @@ exports[`render green button 1`] = `
           "color": "#000",
         },
         {
-          "backgroundColor": "#237e5d",
-          "borderRadius": 30,
-          "color": "#ffffff",
-          "fontFamily": "SatoshiMedium",
-          "fontSize": 16,
-          "marginBottom": 40,
-          "paddingVertical": 22,
-          "textAlign": "center",
+          "fontFamily": "SatoshiRegular",
+          "paddingTop": 12,
         },
       ]
     }
   >
-    green button
+    Resend code
   </Text>
 </View>
-`;
-
-exports[`render grey button 1`] = `
-<Text
-  style={
-    [
-      {
-        "color": "#000",
-      },
-      {
-        "backgroundColor": "#d1d3d9",
-        "borderRadius": 30,
-        "color": "#000000",
-        "fontFamily": "SatoshiMedium",
-        "fontSize": 16,
-        "marginBottom": 40,
-        "paddingVertical": 22,
-        "textAlign": "center",
-      },
-    ]
-  }
->
-  grey button
-</Text>
 `;

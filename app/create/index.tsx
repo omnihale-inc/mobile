@@ -1,5 +1,5 @@
 import { router } from "expo-router";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { StyleSheet, SafeAreaView, Dimensions } from "react-native";
 
 import { GreenButton, GreyButton } from "../../components/Button";
@@ -7,12 +7,18 @@ import InputWithIcon from "../../components/InputWithIcon";
 import { BoldText, MediumText, RegularText } from "../../components/Texts";
 import { View } from "../../components/Themed";
 import MailIcon from "../../components/icons/MailIcon";
+import {
+  CreateEmailContext,
+  CreateEmailContextType
+} from "../../context/createEmailContext";
 import { globalStyle } from "../../styles/globalStyle";
-import enterEmailInputValidator from "../../utils/create/enterEmailInputValidator";
+import enterEmailInputValidator from "../../utils/enterEmailInputValidator";
 
 export default function EnterEmail() {
   const [buttonTextDisable, setButtonTextDisable] = useState(true);
   const [emailInput, setEmailInput] = useState("");
+  const { setCreateEmail } =
+    useContext<CreateEmailContextType>(CreateEmailContext);
 
   // Check the email input and validates it on every change
   useEffect(
@@ -21,9 +27,9 @@ export default function EnterEmail() {
   );
   return (
     <SafeAreaView style={styles.container}>
-      <View style={styles.email}>
+      <View>
         <BoldText style={styles.bigText}>Enter your email Address</BoldText>
-        <RegularText style={{ ...styles.otp, ...styles.smallText }}>
+        <RegularText style={{ ...styles.smallSpacingTop, ...styles.smallText }}>
           A 4-code OTP will be sent to your email to verify your account.
         </RegularText>
         <InputWithIcon
@@ -47,6 +53,7 @@ export default function EnterEmail() {
           <GreenButton
             onPress={() => {
               router.push("/create/verify");
+              setCreateEmail(emailInput);
             }}
           >
             Send code

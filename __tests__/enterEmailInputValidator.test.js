@@ -1,4 +1,4 @@
-import enterEmailInputValidator from "../utils/create/enterEmailInputValidator";
+import enterEmailInputValidator from "../utils/enterEmailInputValidator";
 
 it("button disable toggle", () => {
   const setButtonTextDisableMock = jest.fn();

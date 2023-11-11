@@ -41,7 +41,6 @@ const styles = StyleSheet.create({
     paddingVertical: 22,
     fontSize: 14,
     borderRadius: 30,
-    marginHorizontal: 24,
     marginBottom: 40
   },
   GreyButton: {
@@ -52,7 +51,6 @@ const styles = StyleSheet.create({
     paddingVertical: 22,
     fontSize: 14,
     borderRadius: 30,
-    marginHorizontal: 24,
     marginBottom: 40
   }
 });

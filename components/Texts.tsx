@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import { TextStyle } from "react-native";
 
 import { Text } from "./Themed";
 
@@ -7,7 +8,7 @@ export const BoldText = ({
   children
 }: {
   children: ReactNode;
-  style?: object;
+  style?: TextStyle;
 }) => <Text style={{ fontFamily: "SatoshiBold", ...style }}>{children}</Text>;
 
 export const RegularText = ({
@@ -15,7 +16,7 @@ export const RegularText = ({
   style
 }: {
   children: ReactNode;
-  style?: object;
+  style?: TextStyle;
 }) => (
   <Text style={{ fontFamily: "SatoshiRegular", ...style }}>{children}</Text>
 );
@@ -25,5 +26,5 @@ export const MediumText = ({
   style
 }: {
   children: ReactNode;
-  style?: object;
+  style?: TextStyle;
 }) => <Text style={{ fontFamily: "SatoshiMedium", ...style }}>{children}</Text>;
