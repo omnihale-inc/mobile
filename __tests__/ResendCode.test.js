@@ -7,7 +7,7 @@ it("render with counter", () => {
     .create(
       <ResendCode
         resend={false}
-        setResend={jest.fn()}
+        onPress={jest.fn()}
         countDown={() => "00:34"}
         styles={{ resend: {}, greenText: {} }}
       />
@@ -21,7 +21,7 @@ it("render without counter", () => {
     .create(
       <ResendCode
         resend
-        setResend={jest.fn()}
+        onPress={jest.fn()}
         countDown={() => "00:34"}
         styles={{ resend: {}, greenText: {} }}
       />

@@ -19,7 +19,7 @@ it("testing onFocusHandler", () => {
     0,
     mockSetCode,
     fakeCurrentFocusField,
-    2
+    1
   ).onFocusHandler();
 
   expect(
@@ -34,7 +34,7 @@ it("testing onFocusHandler", () => {
 });
 
 it("testing onBlurHandler", () => {
-  new EmailCodeEvents(0, mockSetCode, fakeCurrentFocusField, 2).onBlurHandler();
+  new EmailCodeEvents(0, mockSetCode, fakeCurrentFocusField, 1).onBlurHandler();
   expect(
     mockSetCodeParameter({
       value: ["", "-"],
@@ -51,7 +51,7 @@ it("testing onChangeTextHandler", () => {
     0,
     mockSetCode,
     fakeCurrentFocusField,
-    2
+    1
   ).onChangeTextHandler("1");
 
   // Checks the input update
@@ -72,7 +72,7 @@ it("testing onChangeTextHandler", () => {
     1,
     mockSetCode,
     fakeCurrentFocusField,
-    2
+    1
   ).onChangeTextHandler("1");
 
   // Checks the input to be uncomplete
@@ -90,13 +90,43 @@ it("testing onChangeTextHandler", () => {
     1,
     mockSetCode,
     fakeCurrentFocusField,
-    2
+    1
+  ).onChangeTextHandler(",");
+
+  // Checks the input to be uncomplete
+  expect(
+    mockSetCodeParameter({
+      value: ["1", "-"],
+      state: "uncomplete"
+    })
+  ).toEqual({
+    value: ["1", ","],
+    state: "uncomplete"
+  });
+
+  new EmailCodeEvents(
+    1,
+    mockSetCode,
+    fakeCurrentFocusField,
+    1
   ).onChangeTextHandler("14");
 
   // Checks the input to be complete
   expect(mockSetCodeParameter).toEqual({
     value: ["1", "4"],
     state: "complete"
+  });
+  new EmailCodeEvents(
+    1,
+    mockSetCode,
+    fakeCurrentFocusField,
+    1
+  ).onChangeTextHandler("1,");
+
+  // Checks the input to be complete
+  expect(mockSetCodeParameter).toEqual({
+    value: ["1", ","],
+    state: "uncomplete"
   });
 });
 
@@ -106,7 +136,7 @@ it("testing onKeyPressHandler", () => {
     1,
     stubSetcode,
     fakeCurrentFocusField,
-    2
+    1
   ).onKeyPressHandler({ nativeEvent: { key: "Backspace" } });
   // Focuses on the previous field
   expect(fakeCurrentFocusField.zero.current.focus).toHaveBeenCalled();

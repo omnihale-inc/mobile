@@ -27,14 +27,14 @@ const CodeInputField = React.forwardRef(
   ) => {
     return (
       <TextInput
-        onChangeText={(changeValue) => events.onChangeTextHandler(changeValue)}
+        onChangeText={events.onChangeTextHandler}
         value={value}
         style={style}
         onFocus={events.onFocusHandler}
         onBlur={events.onBlurHandler}
         keyboardType="numeric"
         ref={ref}
-        onKeyPress={(key) => events.onKeyPressHandler(key)}
+        onKeyPress={events.onKeyPressHandler}
       />
     );
   }

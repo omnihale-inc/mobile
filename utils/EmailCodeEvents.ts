@@ -76,14 +76,14 @@ export class EmailCodeEvents {
   onChangeTextHandler = (changeValue: string) => {
     // Auto focus the next code input field after input change
     if (
-      this.index + 1 !== this.totalIndices &&
-      !this.isLengthWithinTotalIndicies(changeValue)
+      this.index !== this.totalIndices &&
+      this.isLengthWithinTotalIndicies(changeValue)
     ) {
       this.currentFocusFieldArray[this.index + 1][1]["current"].focus();
     }
     // Handles when input is paste, it auto spreads the paste values
     // to cover all the input fields
-    if (this.isLengthWithinTotalIndicies(changeValue)) {
+    if (!this.isLengthWithinTotalIndicies(changeValue)) {
       this.setCode({
         value: [...changeValue.trim().split("")],
         // validates that the input values are all numbers
@@ -117,10 +117,10 @@ export class EmailCodeEvents {
     }
   };
   private isLengthWithinTotalIndicies = (changeValue: string) => {
-    if (changeValue.trim().split("").length >= this.totalIndices) {
-      return true;
+    if (changeValue.trim().split("").length - 1 >= this.totalIndices) {
+      return false;
     }
-    return false;
+    return true;
   };
 }
 

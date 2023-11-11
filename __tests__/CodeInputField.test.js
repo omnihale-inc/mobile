@@ -6,7 +6,7 @@ it("render code input field", () => {
   const mockProps = {
     events: {
       onChangeTextHandler: jest.fn(),
-      onKeyPressHandler: jest.fn(),
+      onKeyPressHandler: jest.fn,
       onFocusHandler: jest.fn(),
       onBlurHandler: jest.fn()
     },

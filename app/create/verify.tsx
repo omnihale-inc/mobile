@@ -29,7 +29,7 @@ export default function VerifyEmail() {
   };
 
   useEffect(() => {
-    currentFocusField.one.current?.focus();
+    currentFocusField.zero.current?.focus();
   }, []);
 
   const inputs = {
