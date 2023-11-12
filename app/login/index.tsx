@@ -10,7 +10,7 @@ import { View } from "../../components/Themed";
 import LockIcon from "../../components/icons/LockIcon";
 import MailIcon from "../../components/icons/MailIcon";
 import { globalStyle } from "../../styles/globalStyle";
-import enterEmailInputValidator from "../../utils/enterEmailInputValidator";
+import InputValidator from "../../utils/InputValidator";
 
 export default function Login() {
   const [emailInput, setEmailInput] = useState("");
@@ -19,13 +19,11 @@ export default function Login() {
   const [emailIsValid, setEmailIsValid] = useState(false);
   const [passwdIsValid, setPasswdIsValid] = useState(false);
 
+  const [passwdIsDisplayed, setPasswdIsDisplayed] = useState(false);
+
   useEffect(() => {
-    enterEmailInputValidator(emailInput, (value) => setEmailIsValid(!value));
-    if (passwdInput.length > 0) {
-      setPasswdIsValid(true);
-    } else {
-      setPasswdIsValid(false);
-    }
+    InputValidator.email(emailInput, (value) => setEmailIsValid(!value));
+    InputValidator.loginPassword(passwdInput, setPasswdIsValid);
   }, [emailInput, passwdInput]);
 
   return (
@@ -33,7 +31,7 @@ export default function Login() {
       <View>
         <BoldText style={styles.bigText}>Log into account</BoldText>
         <RegularText style={{ ...styles.smallSpacingTop, ...styles.smallText }}>
-          Welcome back to MedLife, please enter your login details to access
+          Welcome back to Omnihale, please enter your login details to access
           your account
         </RegularText>
 
@@ -43,12 +41,15 @@ export default function Login() {
           value={emailInput}
         />
 
-        <View style={{ position: "relative", marginTop: -24 }}>
+        <View style={styles.passwordWrapper}>
           <PasswordInputWithIcon
             icon={() => <LockIcon />}
             placeholder="Enter password"
             onChangeText={(value) => setPasswdInput(value)}
             value={passwdInput}
+            passwdIsDisplayed={passwdIsDisplayed}
+            eyeVisibleOnPress={() => setPasswdIsDisplayed(true)}
+            eyeInvisibleOnPress={() => setPasswdIsDisplayed(false)}
           />
         </View>
 
@@ -61,8 +62,7 @@ export default function Login() {
             style={{
               ...styles.greenText,
               ...styles.mediumText,
-              textAlign: "right",
-              paddingRight: 5
+              ...styles.forgotPassword
             }}
           >
             Forgot password?
@@ -84,27 +84,18 @@ export default function Login() {
             <GreyButton>Log into account</GreyButton>
           </View>
         )}
-        <View
-          style={{
-            marginTop: -32,
-            marginLeft: 5,
-            display: "flex",
-            flexDirection: "row",
-            alignItems: "center"
-          }}
-        >
+        <View style={styles.createAccount}>
           <RegularText
             style={{ ...styles.smallSpacingTop, ...styles.smallText }}
           >
             Don't have an account with us?
           </RegularText>
-          <Pressable>
+          <Pressable onPress={() => router.push("/create/")}>
             <MediumText
               style={{
                 ...styles.greenText,
                 ...styles.mediumText,
-                marginTop: 14,
-                marginLeft: 5
+                ...styles.createAccountText
               }}
             >
               Create an account
@@ -118,4 +109,16 @@ export default function Login() {
 
 const viewPortHeight = Dimensions.get("window").height;
 
-const styles = StyleSheet.create(globalStyle(viewPortHeight));
+const styles = StyleSheet.create({
+  passwordWrapper: { position: "relative", marginTop: -24 },
+  forgotPassword: { textAlign: "right", paddingRight: 5 },
+  createAccount: {
+    marginTop: -32,
+    marginLeft: 5,
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center"
+  },
+  createAccountText: { marginTop: 14, marginLeft: 5 },
+  ...globalStyle(viewPortHeight)
+});

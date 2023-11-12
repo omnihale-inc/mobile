@@ -1,24 +1,30 @@
-import { ReactNode, useState } from "react";
+import { ReactNode } from "react";
 import { StyleSheet, TextInput } from "react-native";
 
 import { View } from "./Themed";
 import EyeInvisibleIcon from "./icons/EyeInvisible";
 import EyeVisibleIcon from "./icons/EyeVisible";
 
-const PasswordInputWithIcon = ({
-  value,
-  onChangeText,
-  icon,
-  placeholder
-}: {
+type PasswordInputWithIconProps = {
   value?: string;
   onChangeText?: (value: string) => void;
   icon: (props?: object) => ReactNode;
   secureText?: boolean;
   placeholder?: string;
-}) => {
-  const [passwdIsDisplayed, setPasswdIsDisplayed] = useState(false);
+  passwdIsDisplayed: boolean;
+  eyeVisibleOnPress: () => void;
+  eyeInvisibleOnPress: () => void;
+};
 
+const PasswordInputWithIcon = ({
+  value,
+  onChangeText,
+  icon,
+  placeholder,
+  passwdIsDisplayed,
+  eyeVisibleOnPress,
+  eyeInvisibleOnPress
+}: PasswordInputWithIconProps) => {
   return (
     <View>
       <View style={styles.emailInputWrapper}>
@@ -40,14 +46,10 @@ const PasswordInputWithIcon = ({
           backgroundColor: "transparent"
         }}
       >
-        {passwdIsDisplayed ? (
-          <EyeVisibleIcon
-            onPress={() => setPasswdIsDisplayed(!passwdIsDisplayed)}
-          />
+        {!passwdIsDisplayed ? (
+          <EyeVisibleIcon onPress={eyeVisibleOnPress} />
         ) : (
-          <EyeInvisibleIcon
-            onPress={() => setPasswdIsDisplayed(!passwdIsDisplayed)}
-          />
+          <EyeInvisibleIcon onPress={eyeInvisibleOnPress} />
         )}
       </View>
     </View>
