@@ -1,6 +1,6 @@
 import { router } from "expo-router";
 import { useEffect, useState, useContext } from "react";
-import { StyleSheet, SafeAreaView, Dimensions } from "react-native";
+import { StyleSheet, SafeAreaView, Dimensions, Pressable } from "react-native";
 
 import { GreenButton, GreyButton } from "../../components/Button";
 import InputWithIcon from "../../components/InputWithIcon";
@@ -12,17 +12,16 @@ import {
   CreateEmailContextType
 } from "../../context/createEmailContext";
 import { globalStyle } from "../../styles/globalStyle";
-import enterEmailInputValidator from "../../utils/enterEmailInputValidator";
+import InputValidator from "../../utils/InputValidator";
 
 export default function EnterEmail() {
   const [buttonTextDisable, setButtonTextDisable] = useState(true);
   const [emailInput, setEmailInput] = useState("");
   const { setCreateEmail } =
     useContext<CreateEmailContextType>(CreateEmailContext);
-
   // Check the email input and validates it on every change
   useEffect(
-    () => enterEmailInputValidator(emailInput, setButtonTextDisable),
+    () => InputValidator.email(emailInput, setButtonTextDisable),
     [emailInput]
   );
   return (
@@ -41,9 +40,16 @@ export default function EnterEmail() {
           <RegularText style={styles.smallText}>
             Have an account with us?
           </RegularText>
-          <MediumText style={{ ...styles.greenText, ...styles.mediumText }}>
-            Log in
-          </MediumText>
+
+          <Pressable
+            onPress={() => {
+              router.push("/login/");
+            }}
+          >
+            <MediumText style={{ ...styles.greenText, ...styles.mediumText }}>
+              Log in
+            </MediumText>
+          </Pressable>
         </View>
       </View>
       <View>

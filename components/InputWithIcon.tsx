@@ -6,17 +6,21 @@ import { View } from "./Themed";
 const InputWithIcon = ({
   value,
   onChangeText,
-  icon
+  icon,
+  secureText,
+  placeholder
 }: {
   value?: string;
   onChangeText?: (value: string) => void;
   icon: (props?: object) => ReactNode;
+  secureText?: boolean;
+  placeholder?: string;
 }) => {
   return (
     <View style={styles.emailInputWrapper}>
       <TextInput
         style={styles.emailInput}
-        placeholder="Enter Email address"
+        placeholder="Enter email address"
         keyboardType="email-address"
         value={value}
         onChangeText={onChangeText}

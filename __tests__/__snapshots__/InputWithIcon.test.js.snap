@@ -16,7 +16,7 @@ exports[`render input with icon 1`] = `
   <TextInput
     keyboardType="email-address"
     onChangeText={[MockFunction]}
-    placeholder="Enter Email address"
+    placeholder="Enter email address"
     style={
       {
         "borderColor": "#d1d3d9",

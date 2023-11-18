@@ -4,13 +4,21 @@ import { Pressable } from "react-native";
 type IconImageProps = {
   onPress?: () => void;
   imageSource: () => any;
+  size?: { width: number; height: number };
 };
 
-const IconImage = ({ onPress, imageSource }: IconImageProps) => {
+const IconImage = ({
+  onPress,
+  imageSource,
+  size = { width: 22, height: 22 }
+}: IconImageProps) => {
   return (
     // Returns the user to previous screen
     <Pressable onPress={onPress}>
-      <Image style={{ width: 22, height: 22 }} source={imageSource()} />
+      <Image
+        style={{ width: size.width, height: size.height }}
+        source={imageSource()}
+      />
     </Pressable>
   );
 };

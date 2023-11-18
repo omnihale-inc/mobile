@@ -64,6 +64,10 @@ function RootLayoutNav() {
           name="create"
           options={{ headerShown: false, animation: "none" }}
         />
+        <Stack.Screen
+          name="login"
+          options={{ headerShown: false, animation: "none" }}
+        />
       </Stack>
     </ThemeProvider>
   );
