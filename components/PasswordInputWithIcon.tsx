@@ -46,7 +46,7 @@ const PasswordInputWithIcon = ({
           backgroundColor: "transparent"
         }}
       >
-        {!passwdIsDisplayed ? (
+        {passwdIsDisplayed ? (
           <EyeVisibleIcon onPress={eyeVisibleOnPress} />
         ) : (
           <EyeInvisibleIcon onPress={eyeInvisibleOnPress} />

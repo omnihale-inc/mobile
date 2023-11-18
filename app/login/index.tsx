@@ -55,7 +55,7 @@ export default function Login() {
 
         <Pressable
           onPress={() => {
-            router.push("/login/");
+            router.push("/login/forgot-password");
           }}
         >
           <MediumText

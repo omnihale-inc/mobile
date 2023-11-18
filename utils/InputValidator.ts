@@ -20,6 +20,14 @@ class InputValidator {
       setState(false);
     }
   };
+
+  static changePassword = (password: string, setState: SetState) => {
+    if (password.length > 7) {
+      setState(true);
+    } else {
+      setState(false);
+    }
+  };
 }
 
 export default InputValidator;

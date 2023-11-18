@@ -19,3 +19,13 @@ it("login password", () => {
   InputValidator.loginPassword("fakePassword", setStateMock); //Password empty
   expect(setStateMock).toHaveBeenCalledWith(true);
 });
+
+it("change password", () => {
+  const setStateMock = jest.fn();
+
+  InputValidator.changePassword("passwor", setStateMock);
+  expect(setStateMock).toHaveBeenCalledWith(false);
+
+  InputValidator.changePassword("password", setStateMock);
+  expect(setStateMock).toHaveBeenCalledWith(true);
+});
